@@ -1,0 +1,32 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Econtainer.Views.PlantSubsystemInfo"
+             Title="{Binding Name}"
+             BackgroundColor="#121212">
+
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Frame BackgroundColor="#333333" Padding="15" CornerRadius="10">
+                <StackLayout>
+                    <Label Text="Temperature History" FontSize="Medium" TextColor="White"/>
+                    <BoxView Color="White" HeightRequest="1" Margin="0,10"/>
+                    <!-- Temperature history visual placeholder -->
+                    <Label Text="{Binding TempHistory, Converter={StaticResource TempHistoryConverter}}" FontSize="Small" TextColor="LightGray"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="#333333" Padding="15" Margin="10,20,10,0" CornerRadius="10">
+                <StackLayout>
+                    <Label Text="Current Environment Control" FontSize="Medium" TextColor="White"/>
+                    <BoxView Color="White" HeightRequest="1" Margin="0,10"/>
+                    <Label Text="{Binding EnvironmentControl.TemperatureSetPoint, StringFormat='Temperature Set Point: {0}°C'}" TextColor="LightGray"/>
+                    <Label Text="{Binding EnvironmentControl.HumiditySetPoint, StringFormat='Humidity Set Point: {0}%'}" TextColor="LightGray"/>
+                    <Label Text="{Binding EnvironmentControl.LightIntensity, StringFormat='Light Intensity: {0}%'}" FontSize="Small" TextColor="LightGray"/>
+                    <Slider Minimum="0" Maximum="100" Value="{Binding EnvironmentControl.LightIntensity, Mode=TwoWay}"/>
+                    <Label Text="Fan Status" FontSize="Small" TextColor="LightGray"/>
+                    <Switch IsToggled="{Binding EnvironmentControl.IsFanOn, Mode=TwoWay}"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

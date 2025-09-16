@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Econtainer.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Views="clr-namespace:Econtainer.Views"
+    xmlns:local="clr-namespace:Econtainer"
+     Shell.FlyoutBehavior="Flyout">
+    <Shell.FlyoutHeader>
+        <Image Source="dotnet_bot.png" HeightRequest="150" Margin="10"/>
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutFooter>
+        <HorizontalStackLayout Padding="10,10">
+            <Image Source="dotnet_bot.png" HeightRequest="50"/>
+            <Label Text="I hope you are enjoring this app!" VerticalTextAlignment="Center"/>
+        </HorizontalStackLayout>
+    </Shell.FlyoutFooter>
+    <FlyoutItem Icon="home.png" Title="Home" Route="Home">
+        <ShellContent
+                Title="DASHBOARD"
+                Icon="home.png"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+
+        <Tab Icon="more.png" Title="Add Post" Route="AddPost">
+            <ShellContent
+                    Title="Select Picture"
+                    Icon="select.png"
+                    Route="FilePage"
+                    ContentTemplate="{DataTemplate Views:LoginPage}" />
+            <ShellContent
+                    Title="Add Post"
+                    Icon="more.png"
+                    Route="NewPostPage"
+                    ContentTemplate="{DataTemplate Views:LoginPage}"
+                     />
+        </Tab>
+
+        <ShellContent
+                Title="Videos"
+                Icon="video.png"
+                Route="VideosPage"
+                ContentTemplate="{DataTemplate Views:LoginPage}"
+                 />
+        <ShellContent
+                Title="Profile"
+                Icon="user.png"
+                Route="ProfilePage"
+                ContentTemplate="{DataTemplate Views:LoginPage}"
+                 />
+    </FlyoutItem>
+
+
+    <ShellContent
+            Title="DASHBOARD"
+            Icon="group.png"
+            Route="GroupsPage"
+            ContentTemplate="{DataTemplate Views:LoginPage}"
+             />
+    <ShellContent
+            Title="SETTINGS"
+            Icon="setting.png"
+            Route="Settings"
+            ContentTemplate="{DataTemplate Views:LoginPage}"
+            />
+    <MenuFlyoutItem Text="Switch Themes" />
+
+
+
+</Shell>

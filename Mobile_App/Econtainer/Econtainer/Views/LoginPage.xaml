@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Econtainer.Views.LoginPage"
+             Title="LoginPage">
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            
+            <Image Source="tree.gif" VerticalOptions="FillAndExpand" Grid.Row="0" MaximumWidthRequest="100"></Image>
+
+            <Label Grid.Row="1" Text="LOGIN" HorizontalTextAlignment="Center" FontSize="Header" TextColor="#A0CF88"
+                HorizontalOptions="FillAndExpand"/>
+
+            <Label Grid.Row="2" Text="EMAIL" VerticalOptions="Center" Margin="10" FontSize="Small" ></Label>
+            <Entry Grid.Row="3" Placeholder="Enter email..." HeightRequest="50" Margin="10" />
+
+            <Label Grid.Row="5" Text="PASSWORD" VerticalOptions="Center" Margin="10"  FontSize="Small"></Label>
+            <Entry Grid.Row="6" Placeholder="Enter password..." HeightRequest="50" Margin="10"/>
+            
+            <Button Grid.Row="7" Text="LOGIN" HorizontalOptions="Center" FontSize="Medium" WidthRequest="200" HeightRequest="50" Clicked="Login_Button_Clicked" />
+
+            <Label Grid.Row="8" Text="----------- OR -----------" Margin="10" HorizontalTextAlignment="Center" FontSize="Large" HorizontalOptions="FillAndExpand" TextColor="#A0CF88"/>
+
+            <Button Grid.Row="9" Text="SIGN UP" HorizontalOptions="Center" FontSize="Medium" WidthRequest="200"  HeightRequest="50" Clicked="Sign_Up_Button_Clicked"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>
